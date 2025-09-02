@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+:root {
+  --main-yellow: #F5B85D;
+  --main-light-yellow: #FEF4EA;
+  --main-light-orange: #DFB390;
+  --main-orange: #BF6730;
+  --main-green: #6F6C3E;
+}
+
+// background color
+.bg-yellow {
+  background-color: var(--main-yellow) !important;
+}
+.bg-light-yellow {
+  background-color: var(--main-light-yellow) !important;
+}
+.bg-orange {
+  background-color: var(--main-orange) !important;
+}
+.bg-light-orange {
+  background-color: var(--main-light-orange) !important;
+}
+.bg-green {
+  background-color: var(--main-green) !important;
+}
+
+// text color
+.text-yellow {
+  color: var(--main-yellow) !important;
+}
+.text-light-yellow {
+  color: var(--main-light-yellow) !important;
+}
+.text-orange {
+  color: var(--main-orange) !important;
+}
+.text-light-orange {
+  color: var(--main-light-orange) !important;
+}
+.text-green {
+  color: var(--main-green) !important;
+}
+
+// text
+.text-h1-semi-bold {
+  font-weight: 600;
+  font-size: 60px;
+}
+.text-h2-semi-bold {
+  font-weight: 600;
+  font-size: 40px;
+}
+.text-h3-semi-bold {
+  font-weight: 600;
+  font-size: 32px;
+}
+.text-h4-semi-bold {
+  font-weight: 600;
+  font-size: 24px;
+}
+.text-h4-medium {
+  font-weight: 500;
+  font-size: 24px;
+}
+.text-h4-regular {
+  font-weight: 400;
+  font-size: 24px;
+}
+.text-h5-regular {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+

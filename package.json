@@ -12,10 +12,14 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "nuxt": "^3.10.1",
-    "sass": "^1.70.0",
     "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.2.2",
+    "sass": "^1.91.0",
+    "sass-loader": "^16.0.5"
   }
 }
