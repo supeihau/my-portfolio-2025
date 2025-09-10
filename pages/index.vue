@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <Header></Header>
-    <v-main>
+    <NavBar></NavBar>
+    <!-- <v-main>
       <v-container class="py-10 text-center">
         <v-btn color="primary" size="large" prepend-icon="mdi-rocket-launch">
           Hello Vuetify in Nuxt 32222
@@ -10,12 +10,12 @@
           hello
         </div>
       </v-container>
-    </v-main>
+    </v-main> -->
   </v-app>
 </template>
 
 <script setup>
-import Header from '@/components/header.vue';
+import NavBar from '@/components/navbar.vue';
 </script>
 
 <style scoped></style>

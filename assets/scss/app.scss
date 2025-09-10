@@ -6,6 +6,8 @@
   --main-light-orange: #DFB390;
   --main-orange: #BF6730;
   --main-green: #6F6C3E;
+  --white: #FFFFFF;
+  --brown: #5C493E;
 }
 
 // background color
@@ -24,6 +26,9 @@
 .bg-green {
   background-color: var(--main-green) !important;
 }
+.bg-white {
+  background-color: var(--white) !important;
+}
 
 // text color
 .text-yellow {
@@ -40,6 +45,12 @@
 }
 .text-green {
   color: var(--main-green) !important;
+}
+.text-white {
+  color: var(--white) !important;
+}
+.text-brown {
+  color: var(--brown) !important;
 }
 
 // text
@@ -70,6 +81,14 @@
 .text-h5-regular {
   font-weight: 400;
   font-size: 20px;
+}
+.text-h6-semi-bold {
+  font-weight: 600;
+  font-size: 18px;
+}
+.text-h6-regular {
+  font-weight: 400;
+  font-size: 18px;
 }
 
 
