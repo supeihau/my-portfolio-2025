@@ -1,5 +1,5 @@
 <template>
-    <v-row class="px-lg-16 px-8 custom-bg">
+    <v-row class="px-md-12 px-lg-16 px-8 custom-bg">
         <v-col cols="12" md="6" lg="7" class="d-flex align-center pa-0">
             <div class="d-flex flex-column align-start justify-start">
                 <div class="text-brown"
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </v-col>
-        <v-col cols="12" md="6" lg="5" class="d-flex align-center justify-end" :class="!isDesktop && 'mt-5'">
+        <v-col cols="12" md="6" lg="5" class="d-flex align-center justify-center justify-md-end" :class="!isDesktop && 'mt-5'">
             <img src="/images/intro-pic.png" alt="intro-pic" style="width: 90%;"/>
         </v-col>
     </v-row>
