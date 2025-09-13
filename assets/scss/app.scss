@@ -78,6 +78,10 @@
   font-weight: 400;
   font-size: 24px;
 }
+.text-h5-semi-bold {
+  font-weight: 600;
+  font-size: 20px;
+}
 .text-h5-regular {
   font-weight: 400;
   font-size: 20px;
@@ -92,3 +96,14 @@
 }
 
 
+.custom-rounded-lg {
+  border-radius: 32px !important;
+}
+
+.custom-rounded-md {
+  border-radius: 24px !important;
+}
+
+.custom-rounded-sm {
+  border-radius: 16px !important;
+}

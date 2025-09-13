@@ -23,8 +23,8 @@ export default function UseInnerWidth() {
   const resizeWindow = () => {
     if (typeof window !== 'undefined') {
       screenWidth.value = window.innerWidth;
-      isDesktop.value = screenWidth.value > 768;
-      isPad.value = screenWidth.value <= 768 && screenWidth.value > 600;
+      isDesktop.value = screenWidth.value > 960;
+      isPad.value = screenWidth.value <= 960 && screenWidth.value > 600;
       isMobile.value = screenWidth.value <= 600;
     }
   };
