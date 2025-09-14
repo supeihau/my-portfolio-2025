@@ -75,12 +75,36 @@
                 </div>
             </div>
         </v-col>
+
+        <v-col cols="12" sm="12" md="12" lg="12">
+            <div 
+                class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
+                :class="isDesktop ? 'px-7 py-10 custom-rounded-lg': 'px-2 py-4 custom-rounded-md'"   
+            >
+                <div
+                    class="text-white"
+                    :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold mb-3'"
+                >
+                    Hardskills 
+                </div>
+                <v-row class="d-flex w-100" align="stretch">
+                    <v-col 
+                        cols="12" sm="4" md="4" lg="4"
+                        v-for="value in hardskills" :key="value.category" 
+                        class="d-flex"
+                    >
+                        <HardskillsCard :hardskills="value"/>
+                    </v-col>
+                </v-row>
+            </div>
+        </v-col>
     </v-row>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import useInnerWidth from '~/composables/useInnerWidth';
+import HardskillsCard from './hardskills-card.vue';
 
 const { isDesktop } = useInnerWidth();
 
@@ -122,6 +146,24 @@ const softskills = ref([
   {
     number: '05',
     descibe: '時間管理與專案規劃能力',
+  },
+]);
+
+const hardskills = ref([
+  {
+    category: '平面設計',
+    description: '品牌識別設計(Logo / 名片)，社群圖文與網頁視覺設計經驗',
+    skills: ['Adobe Illustrator', 'Canva'],
+  },
+  {
+    category: 'UIUX',
+    description: '熟悉設計流程，能運用Figma 製作高保真圓型並與前端協作交付，曾參與Web 專案 UIUX 設計與使用者測試訪談',
+    skills: ['Flow Chart', 'Wireframe', 'Prototype'],
+  },
+  {
+    category: '前端技術',
+    description: '熟悉 HTML / CSS、RWD 切版與 Git 協作，能用 React、Vue 開發元件並串接 API，具 Quasar 、Bootstrap 使用經驗。',
+    skills: ['React', 'Vue', 'Git'],
   },
 ]);
 </script>
