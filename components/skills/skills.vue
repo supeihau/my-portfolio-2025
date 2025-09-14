@@ -1,73 +1,75 @@
 <template>
-    <v-row class="px-md-12 px-lg-16 px-8">
-        <v-col 
-            cols="12" sm="12" md="6" lg="6" 
-            class="d-flex flex-column align-center justify-start bg-light-orange"
-            :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-4 custom-rounded-md'"
-        >
-            <div 
-                class="text-white"
-                :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold'"
+    <v-row class="px-md-12 px-lg-16 px-5" align="stretch">
+        <v-col cols="12" sm="12" md="6" lg="6" >
+            <div
+                class="d-flex flex-column align-center justify-start bg-light-orange fill-height"
+                :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-4 custom-rounded-md'"
             >
-                Work Experience
-            </div>
-            <div 
-                class="w-100 d-flex flex-column fill-height" 
-                :class="isDesktop ? 'mt-6 ga-5': 'mt-3 ga-3'"
-            >
-                <div class="d-flex flex-grow-1" v-for="value in experience" :key="value.time">
-                    <div 
-                        class="bg-white d-flex flex-column w-100 justify-space-between align-start"
-                        :class="isDesktop ? 'flex-grow-1 pa-6 custom-rounded-md': 'pa-4 custom-rounded-sm'"
-                    >
-                        <div class="text-brown"  
-                            :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'">
-                            {{ value.time }}
-                        </div>
-                        <div class="text-orange"
-                            :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold '">
-                            {{ value.position }}
-                        </div>
-                        <div class="text-brown"
-                            :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold '">
-                            {{ value.company }}
+                <div 
+                    class="text-white"
+                    :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold'"
+                >
+                    Work Experience
+                </div>
+                <div 
+                    class="w-100 d-flex flex-column fill-height" 
+                    :class="isDesktop ? 'mt-6 ga-5': 'mt-3 ga-3'"
+                >
+                    <div class="d-flex flex-grow-1" v-for="value in experience" :key="value.time">
+                        <div 
+                            class="bg-white d-flex flex-column w-100 justify-space-between align-start"
+                            :class="isDesktop ? 'flex-grow-1 pa-6 custom-rounded-md': 'pa-4 custom-rounded-sm'"
+                        >
+                            <div class="text-brown"  
+                                :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'">
+                                {{ value.time }}
+                            </div>
+                            <div class="text-orange"
+                                :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold '">
+                                {{ value.position }}
+                            </div>
+                            <div class="text-brown"
+                                :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold '">
+                                {{ value.company }}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </v-col>
 
-        <v-col 
-            cols="12"  sm="12" md="6" lg="6" 
-            class="d-flex flex-column align-center justify-start bg-light-orange"
-            :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-4 mt-5 custom-rounded-md'"
-        >
-            <div
-                class="text-white"
-                :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold'"
-            >
-                Softskills 
-            </div>
+        <v-col cols="12"  sm="12" md="6" lg="6" >
             <div 
-                class="w-100 d-flex flex-column fill-height"
-                :class="isDesktop ? 'mt-6 ga-3': 'mt-3 ga-2'"
+                class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
+                :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-4 custom-rounded-md'"   
             >
-                <div class="d-flex flex-grow-1" v-for="value in softskills" :key="value.number">
-                    <div 
-                        class="bg-white d-flex flex-row ga-1 w-100 justify-start align-center"
-                        :class="isDesktop ? 'flex-grow-1 pa-6 custom-rounded-md': 'pa-4 custom-rounded-sm'"
-                    >
+                <div
+                    class="text-white"
+                    :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold'"
+                >
+                    Softskills 
+                </div>
+                <div 
+                    class="w-100 d-flex flex-column fill-height"
+                    :class="isDesktop ? 'mt-6 ga-3': 'mt-3 ga-2'"
+                >
+                    <div class="d-flex flex-grow-1" v-for="value in softskills" :key="value.number">
                         <div 
-                            class=" text-orange"
-                            :class="isDesktop ? 'text-h4-semi-bold': 'text-h5-semi-bold'"
+                            class="bg-white d-flex flex-row ga-1 w-100 justify-start align-center"
+                            :class="isDesktop ? 'flex-grow-1 pa-6 custom-rounded-md': 'pa-4 custom-rounded-sm'"
                         >
-                            {{ value.number }}
-                        </div>
-                        <div 
-                            class="text-h4-regular text-brown pl-2"
-                            :class="isDesktop ? 'text-h4-regular': 'text-h6-regular'"
-                        >
-                            {{ value.descibe }}
+                            <div 
+                                class=" text-orange"
+                                :class="isDesktop ? 'text-h4-semi-bold': 'text-h5-semi-bold'"
+                            >
+                                {{ value.number }}
+                            </div>
+                            <div 
+                                class="text-h4-regular text-brown pl-2"
+                                :class="isDesktop ? 'text-h4-regular': 'text-h6-regular'"
+                            >
+                                {{ value.descibe }}
+                            </div>
                         </div>
                     </div>
                 </div>
