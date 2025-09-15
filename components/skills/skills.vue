@@ -1,5 +1,5 @@
 <template>
-    <v-row class="px-md-12 px-lg-16 px-5" align="stretch">
+    <v-row class="px-md-12 px-lg-16 px-5 pb-16 custom-margin custom-bg" align="stretch">
         <v-col cols="12" sm="12" md="6" lg="6" >
             <div
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height"
@@ -169,4 +169,15 @@ const hardskills = ref([
 </script>
 
 <style lang="scss" scoped>
+.custom-margin {    
+    margin-top: -60px;
+}
+
+.custom-bg {
+    background-image: url('/images/skill-bg.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 30%;
+}
 </style>
