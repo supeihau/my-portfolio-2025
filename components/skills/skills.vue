@@ -178,6 +178,6 @@ const hardskills = ref([
     width: 100%;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: auto 30%;
+    background-size: auto 20%;
 }
 </style>
