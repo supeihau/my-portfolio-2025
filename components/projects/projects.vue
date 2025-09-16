@@ -1,5 +1,5 @@
 <template>
-    <div class="px-md-12 px-lg-16 px-8 py-16 bg-light-yellow">
+    <div class="px-md-12 px-lg-16 px-7 py-16 bg-light-yellow">
         <div class="text-brown text-h3-semi-bold mb-3 text-center">
             Projects
         </div>
@@ -8,9 +8,17 @@
             大學時期參與許多社團事務，包括彰師小生物、彰師大升學輔導種子計畫以及彰師大諮輔志工團。 其中「彰師小生物」是提供學生課程評價搜尋的服務，目前收錄1000則以上的評價回饋。我主要負責粉絲專頁的文案平面設計，以及網站平台前端網頁的建置與維護，目前粉專有1300的追蹤人數，平台有6500以上的使用者，也藉此累積了很多作品及經驗。
         </div>
 
-        <div v-for="(project, index) in projects" :key="index">
+        <div v-for="(project, index) in visibleProjects" :key="index">
             <ProjectCard :project="project"></ProjectCard>
         </div>
+
+        <div
+          class="text-brown text-center text-decoration-underline"
+          :class="isDesktop ? 'text-h4-semi-bold mt-10' : 'text-h5-semi-bold mt-6'"
+          @click="toggleExpand"
+        >
+          {{ expand ? 'View Less' : 'View More' }}
+      </div>
     </div>
 </template>
 
@@ -54,7 +62,15 @@ const projects = ref([
   },
 ]);
 
+const expand = ref(false);
 
+const visibleProjects = computed(() =>
+  expand.value ? projects.value : projects.value.slice(0, 2)
+);
+
+const toggleExpand = () => {
+  expand.value = !expand.value;
+}
 </script>
 
 <style lang="scss" scoped>
