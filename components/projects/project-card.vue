@@ -28,22 +28,23 @@
                 <div class="d-flex mt-5"
                     :class="isDesktop || isPad? 'flex-row ga-3': 'flex-column ga-3'"
                 >
-                    <v-btn  
+                    <CustomButton
                         v-if="props.project.designConcept != ''"
-                        append-icon="mdi-arrow-right" rounded="xl" size="large" 
-                        variant="outlined" color="bg-orange"
+                        :type="'outlined'"
+                        :btnName="'設計理念'"
+                        :class="'bg-white text-orange'"
+                        :has-icon="true"
                         @click="window.open(props.project.designConcept, '_blank')"
-                    >
-                        設計理念
-                    </v-btn>
-                    <v-btn  
+                    />
+
+                     <CustomButton
                         v-if="props.project.productUrl != ''"
-                        append-icon="mdi-arrow-right" rounded="xl" size="large"
-                        color="bg-orange"
+                        :type="'elevated'"
+                        :btnName="'產品網址'"
+                        :class="'bg-orange text-white'"
+                        :has-icon="true"
                         @click="window.open(props.project.productUrl, '_blank')"
-                    >
-                        產品網址
-                    </v-btn>
+                    />
                 </div>
             </v-col>
             <v-col 
@@ -58,6 +59,8 @@
 
 <script setup>
 import useInnerWidth from '~/composables/useInnerWidth';
+import CustomButton from '../form/button.vue';
+
 
 const { isDesktop, isPad } = useInnerWidth();
 

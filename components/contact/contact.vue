@@ -32,11 +32,81 @@
           </div>
         </v-col>
       </v-row>
+
+      <div class="w-100 d-flex justify-center">
+        <CustomButton
+          :type="'elevated'"
+          :btnName="'聯絡我'"
+          :class="'bg-orange text-white'"
+          :has-icon="false"
+          @click="openDialog()"
+        />
+      </div>
+
+      <v-dialog
+        :model-value="state.dialog"
+        max-width="600"
+      >
+        <v-card title="聯絡我">
+          <v-card-text>
+            <v-row dense>
+              <v-col cols="12" md="12" sm="12">
+                <v-text-field
+                  label="姓名*"
+                  required
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="12" sm="12">
+                <v-text-field
+                  label="公司/單位"
+                  required
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="12" sm="12">
+                <v-text-field
+                  label="Email*"
+                  required
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="12" sm="12">
+                <v-text-field
+                  label="訊息內容"
+                  required
+                ></v-text-field>
+              </v-col>
+            </v-row>
+
+          </v-card-text>
+
+          <v-card-actions>
+            <div class="w-100 d-flex justify-center pa-4 ga-4">
+              <CustomButton
+                :type="'outlined'"
+                :btnName="'取消'"
+                :class="'bg-white text-orange'"
+                :has-icon="false"
+                @click="closeDialog()"
+              />
+              <CustomButton
+                :type="'elevated'"
+                :btnName="'送出'"
+                :class="'bg-orange text-white'"
+                :has-icon="false"
+                @click="send()"
+              />
+            </div>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+      
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import useInnerWidth from '~/composables/useInnerWidth';
 
 const { isDesktop } = useInnerWidth();
@@ -48,6 +118,7 @@ import UserIcon from '@/assets/icon/user.svg';
 import PhoneIcon from '@/assets/icon/phone.svg';
 import EmailIcon from '@/assets/icon/email.svg';
 import GitHubIcon from '@/assets/icon/github.svg';
+import CustomButton from '../form/button.vue';
 
 
 const info = ref([
@@ -80,6 +151,23 @@ const info = ref([
     title: 'supeihau',
   },
 ]);
+
+const state = reactive({
+  dialog: false,
+});
+
+const openDialog = () => {
+  state.dialog = true;
+  console.log('open dialog');
+}
+const closeDialog = () => {
+  state.dialog = false;
+  console.log('close dialog');
+}
+const send = () => {
+  state.dialog = false;
+  console.log('send');
+}
 </script>
 
 <style lang="scss" scoped>
