@@ -49,35 +49,48 @@
       >
         <v-card title="聯絡我">
           <v-card-text>
-            <v-row dense>
-              <v-col cols="12" md="12" sm="12">
-                <v-text-field
-                  label="姓名*"
-                  required
-                ></v-text-field>
-              </v-col>
+            <v-form ref="formRef">
+              <v-row dense>
+                <v-col cols="12" md="12" sm="12">
+                  <CustomInput
+                    v-model="state.form.name"
+                    label="姓名"
+                    :placeholder="'請輸入您的姓名'"
+                    :required="true"
+                    :rules="[v => !!v || '必填']"
+                  />
+                </v-col>
 
-              <v-col cols="12" md="12" sm="12">
-                <v-text-field
-                  label="公司/單位"
-                  required
-                ></v-text-field>
-              </v-col>
+                <v-col cols="12" md="12" sm="12">
+                  <CustomInput
+                    v-model="state.form.company"
+                    label="公司/單位"
+                    :placeholder="'請輸入聯絡公司/單位'"
+                    :required="false"
+                  />
+                </v-col>
 
-              <v-col cols="12" md="12" sm="12">
-                <v-text-field
-                  label="Email*"
-                  required
-                ></v-text-field>
-              </v-col>
+                <v-col cols="12" md="12" sm="12">
+                  <CustomInput
+                    v-model="state.form.email"
+                    label="Email"
+                    :placeholder="'請輸入您的Email'"
+                    :required="true"
+                    :rules="[v => !!v || '必填']"
+                  />
+                </v-col>
 
-              <v-col cols="12" md="12" sm="12">
-                <v-text-field
-                  label="訊息內容"
-                  required
-                ></v-text-field>
-              </v-col>
-            </v-row>
+                <v-col cols="12" md="12" sm="12">
+                  <CustomInput
+                    v-model="state.form.message"
+                    label="訊息內容"
+                    :type="'textarea'"
+                    :required="false"
+                  />
+                </v-col>
+              </v-row>
+            </v-form>
+            
 
           </v-card-text>
 
@@ -118,9 +131,10 @@ import UserIcon from '@/assets/icon/user.svg';
 import PhoneIcon from '@/assets/icon/phone.svg';
 import EmailIcon from '@/assets/icon/email.svg';
 import GitHubIcon from '@/assets/icon/github.svg';
+import CustomInput from '../form/input.vue';
 import CustomButton from '../form/button.vue';
 
-
+const formRef = ref(null);
 const info = ref([
   {
     icon: SchoolIcon,
@@ -154,6 +168,12 @@ const info = ref([
 
 const state = reactive({
   dialog: false,
+  form: {
+    name: '',
+    company: '',
+    email: '',
+    message: '',
+  }
 });
 
 const openDialog = () => {
@@ -164,8 +184,11 @@ const closeDialog = () => {
   state.dialog = false;
   console.log('close dialog');
 }
-const send = () => {
+const send = async () => {
+  const { valid } = await formRef.value.validate()
+  if (!valid) return
   state.dialog = false;
+  console.log(state.form);
   console.log('send');
 }
 </script>

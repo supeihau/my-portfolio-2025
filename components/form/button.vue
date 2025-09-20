@@ -5,7 +5,7 @@
         size="large" 
         :class="props.class"
         :variant="props.type"
-        variant="outlined" 
+        :disabled="props.disabled"
         @click="onClick()"
     >
         {{ props.btnName }}
@@ -28,6 +28,11 @@ const props = defineProps({
         type: String,
         default: '',
         required: true,
+    },
+    disabled: {
+        type: Boolean,
+        default: false,
+        required: false,
     },
     hasIcon: {
         type: Boolean,
