@@ -1,4 +1,19 @@
 <template>
+    <div class="alert-fixed-top">
+      <v-alert
+        v-if="state.apiStatus === 'success'"
+        variant="outlined"
+        title="已成功送出"
+        type="success"
+      ></v-alert>
+      <v-alert
+        v-if="state.apiStatus === 'error'"
+        variant="outlined"
+        title="送出失敗，請稍後再試"
+        type="error"
+      ></v-alert>
+    </div>
+
     <div class="px-md-12 px-lg-16 px-7 py-16">
       <div class="text-brown text-h3-semi-bold mb-3 text-center">
           Personal Information
@@ -114,12 +129,12 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-      
     </div>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue';
+import emailjs from '@emailjs/browser'
 import useInnerWidth from '~/composables/useInnerWidth';
 
 const { isDesktop } = useInnerWidth();
@@ -173,24 +188,50 @@ const state = reactive({
     company: '',
     email: '',
     message: '',
-  }
+  },
+  apiStatus: null, // 'success' or 'error'
 });
 
 const openDialog = () => {
   state.dialog = true;
-  console.log('open dialog');
 }
 const closeDialog = () => {
   state.dialog = false;
-  console.log('close dialog');
 }
 const send = async () => {
   const { valid } = await formRef.value.validate()
   if (!valid) return
   state.dialog = false;
-  console.log(state.form);
-  console.log('send');
-}
+  
+  try {
+    await emailjs.send(
+      'service_zkrm1or',
+      'template_1hub09c',
+      {
+        name: state.form.name,
+        company: state.form.company,
+        email: state.form.email,
+        message: state.form.message,
+      },
+      { publicKey: 'mmBEwcK9y3czug5Nw' }
+    )
+    state.apiStatus = 'success'
+    // 送出成功後清空欄位
+    state.form = {
+      name: '',
+      company: '',
+      email: '',
+      message: '',
+    }
+  } catch (err) {
+    state.apiStatus = 'error'
+  }
+
+  // 3秒後alert消失
+  setTimeout(() => {
+    state.apiStatus = null
+  }, 3000)
+};
 </script>
 
 <style lang="scss" scoped>
@@ -219,6 +260,17 @@ const send = async () => {
 .img-size-phone {
   width: 24px; 
   height: 24px;
+}
+
+.alert-fixed-top {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  width: 400px;
+  max-width: 90vw;
+  pointer-events: none;
 }
 
 
