@@ -1,6 +1,6 @@
 <template>
     <v-row class="px-md-12 px-lg-16 px-8 custom-bg">
-        <v-col cols="12" md="6" lg="7" class="d-flex align-center pa-0">
+        <v-col cols="12" sm="6" md="6" lg="7" class="d-flex align-center pa-0">
             <div class="d-flex flex-column align-start justify-start">
                 <div class="text-brown"
                     :class="isDesktop ? 'text-h1-semi-bold': 'text-h2-semi-bold'">
@@ -12,13 +12,12 @@
                 </div>
                 <div class="mt-5 text-brown"
                     :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'">
-                    我對設計一直抱有熱情，曾自學並產出一些平面設計作品；大學就讀資管系時，希望將設計興趣與專業能力結合，便開始進入UIUX介面設計的領域，並學習前端相關技術，讓設計稿能真正落地。一路以來，我不僅在意功是否能完成，更重視介面的設計感與使用者需求，同時注重程式碼的可讀性與擴充性。<br/>
-                    目前我熟悉 Nuxt 3、React、Vue 與 Figma，並持續探索如何在需求、設計與程式之間找到平衡。未來，我希望透過更多實戰經驗，打造能說故事、解決問題、讓使用者喜愛的數位產品，同時也為團隊或品牌創造流量與實際成效。
+                    我對設計始終抱有熱情，曾自學並產出平面設計作品；大學就讀資管系時，希望結合設計與專業能力，便投入 UIUX 領域，並學習前端技術讓設計稿能落地。我在意的不只是功能，更重視設計感、使用者需求，以及程式碼的可讀性與擴充性。目前熟悉 Nuxt 3、React、Vue 與 Figma，並持續探索設計與程式的平衡。未來希望透過更多實戰，打造能說故事、解決問題、讓使用者喜愛的產品，同時為團隊或品牌創造實際成效。
                 </div>
             </div>
         </v-col>
-        <v-col cols="12" md="6" lg="5" class="d-flex align-center justify-center justify-md-end" :class="!isDesktop && 'mt-5'">
-            <img src="/images/intro-pic.png" alt="intro-pic" style="width: 90%;"/>
+        <v-col cols="12" sm="6" md="6" lg="5" class="d-flex align-center justify-center justify-md-end" :class="!isDesktop && 'mt-5 pa-0'">
+            <img src="/images/intro-pic.png" alt="intro-pic" :class="isDesktop? 'profile-desktop' : 'w-100'"/>
         </v-col>
     </v-row>
 </template>
@@ -37,5 +36,13 @@ const { isDesktop } = useInnerWidth();
     background-size: cover;
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.profile-desktop {
+    width: 90%;
+}
+
+.profile-phone {
+    width: 100%;
 }
 </style>
