@@ -3,7 +3,7 @@
         :append-icon="hasIcon && props.appendIcon"
         rounded="xl" 
         size="large" 
-        class="text-h5-medium px-5"
+        class="text-h5-medium px-7"
         :class="props.class"
         :variant="props.type"
         :disabled="props.disabled"
@@ -54,5 +54,5 @@ function onClick() {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>
