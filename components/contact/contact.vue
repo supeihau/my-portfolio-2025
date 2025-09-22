@@ -52,7 +52,7 @@
         <CustomButton
           :type="'elevated'"
           :btnName="'聯絡我'"
-          :class="'bg-orange text-white'"
+          :class="'bg-orange text-white text-h5-medium  px-10'"
           :has-icon="false"
           @click="openDialog()"
         />
