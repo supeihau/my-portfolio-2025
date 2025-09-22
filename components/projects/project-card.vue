@@ -14,6 +14,9 @@
                     >
                         {{ props.project.title }}
                     </div>
+                    <div class="text-brown text-h6-regular mb-5">
+                        上次更新時間：{{ props.project.updatedAt }}
+                    </div>
                     <div class="flex-grow-1">
                         <div 
                             v-for="value in props.project.skills"

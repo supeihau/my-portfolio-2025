@@ -13,7 +13,7 @@
         </div>
 
         <div
-          class="text-brown text-center text-decoration-underline"
+          class="text-brown text-center text-decoration-underline cursor-pointer"
           :class="isDesktop ? 'text-h4-semi-bold mt-10' : 'text-h5-semi-bold mt-6'"
           @click="toggleExpand"
         >
@@ -35,30 +35,35 @@ const projects = ref([
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     designConcept: 'kkkk',
     productUrl: 'https://ncuehulolo.idv.tw/timetable/',
+    updatedAt: '2024-06-01',
   },
   {
     title: '彰師小生物 - 評價審核與查詢',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     designConcept: '',
     productUrl: '',
+    updatedAt: '2024-06-01',
   },
   {
     title: '科學毛怪 - 產品系統',
     skills: ['FrontEnd', 'React', 'Atomize'],
     designConcept: '',
     productUrl: '',
+    updatedAt: '2024-05-15',
   },
   {
     title: '科學毛怪 - 產品官網',
     skills: ['FrontEnd', 'React', 'Atomize'],
     designConcept: '',
     productUrl: '',
+    updatedAt: '2024-05-15',
   },
   {
     title: '彰師小生物 - 一頁式網頁',
     skills: ['FrontEnd', 'JavaScript'],
     designConcept: '',
     productUrl: '',
+    updatedAt: '2024-04-20',
   },
 ]);
 
