@@ -12,14 +12,14 @@
         </div>
         <div 
             class="text-brown my-4 flex-grow-1"
-            :class="isDesktop ? 'text-h4-regular': 'text-h6-regular'"
+            :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'"
         >
             {{ props.hardskills.description }}
         </div>
         <div 
             v-for="value in props.hardskills.skills"
-            class="text-h4-semi-bold text-orange"
-            :class="isDesktop ? 'text-h4-semi-bold': 'text-h6-semi-bold'"
+            class="text-orange"
+            :class="isDesktop ? 'text-h5-semi-bold': 'text-h6-semi-bold'"
         >
             # {{ value }}
         </div>

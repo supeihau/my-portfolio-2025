@@ -1,5 +1,5 @@
 <template>
-    <v-row class="px-md-12 px-lg-13 px-5 pb-16 custom-top-effect" align="stretch">
+    <v-row class="px-md-12 px-lg-13 px-5 custom-top-effect" align="stretch">
         <v-col cols="12" sm="6" md="6" lg="6" >
             <div
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height"
@@ -24,7 +24,7 @@
                                 :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'">
                                 {{ value.time }}
                             </div>
-                            <div class="text-orange"
+                            <div class="text-orange mt-2"
                                 :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold '">
                                 {{ value.position }}
                             </div>
@@ -65,8 +65,8 @@
                                 {{ value.number }}
                             </div>
                             <div 
-                                class="text-h4-regular text-brown pl-3"
-                                :class="isDesktop ? 'text-h4-regular': 'text-h6-regular'"
+                                class="text-brown pl-3"
+                                :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'"
                             >
                                 {{ value.descibe }}
                             </div>

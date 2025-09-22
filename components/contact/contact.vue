@@ -25,7 +25,7 @@
               <div class="custom-icon-border" :class="isDesktop? 'border-size-desktop': 'border-size-phone'">
                   <img :src="value.icon" alt="school" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
               </div>
-              <div class="text-orange ml-4 text-center"
+              <div class="text-orange ml-4 text-start"
                   :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium'">
                   {{ value.title }}
               </div>
@@ -39,7 +39,7 @@
               <div class="custom-icon-border" :class="isDesktop? 'border-size-desktop': 'border-size-phone'">
                   <img :src="value.icon" alt="school" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
               </div>
-              <div class="text-orange ml-4"
+              <div class="text-orange ml-4 text-start"
                   :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium'">
                   {{ value.title }}
               </div>
@@ -48,7 +48,7 @@
         </v-col>
       </v-row>
 
-      <div class="w-100 d-flex justify-center">
+      <div class="w-100 d-flex justify-center mt-10">
         <CustomButton
           :type="'elevated'"
           :btnName="'聯絡我'"
