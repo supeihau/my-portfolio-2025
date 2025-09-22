@@ -1,9 +1,9 @@
 <template>
-    <v-row class="px-md-12 px-lg-16 px-5 pb-16 g" align="stretch">
-        <v-col cols="12" sm="12" md="6" lg="6" >
+    <v-row class="px-md-12 px-lg-13 px-5 pb-16 custom-top-effect" align="stretch">
+        <v-col cols="12" sm="6" md="6" lg="6" >
             <div
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height"
-                :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-4 custom-rounded-md'"
+                :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-5 custom-rounded-md'"
             >
                 <div 
                     class="text-white"
@@ -38,10 +38,10 @@
             </div>
         </v-col>
 
-        <v-col cols="12"  sm="12" md="6" lg="6" >
+        <v-col cols="12" sm="6" md="6" lg="6" >
             <div 
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
-                :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-4 custom-rounded-md'"   
+                :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-5 custom-rounded-md'"   
             >
                 <div
                     class="text-white"
@@ -56,7 +56,7 @@
                     <div class="d-flex flex-grow-1" v-for="value in softskills" :key="value.number">
                         <div 
                             class="bg-white d-flex flex-row ga-1 w-100 justify-start align-center"
-                            :class="isDesktop ? 'flex-grow-1 pa-6 custom-rounded-md': 'pa-4 custom-rounded-sm'"
+                            :class="isDesktop ? 'flex-grow-1 px-6 py-3 custom-rounded-md': 'px-4 py-2 custom-rounded-sm'"
                         >
                             <div 
                                 class=" text-orange"
@@ -65,7 +65,7 @@
                                 {{ value.number }}
                             </div>
                             <div 
-                                class="text-h4-regular text-brown pl-2"
+                                class="text-h4-regular text-brown pl-3"
                                 :class="isDesktop ? 'text-h4-regular': 'text-h6-regular'"
                             >
                                 {{ value.descibe }}
@@ -179,5 +179,10 @@ const hardskills = ref([
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: auto 20%;
+}
+
+.custom-top-effect {
+    top: -80px; 
+    position: relative;
 }
 </style>
