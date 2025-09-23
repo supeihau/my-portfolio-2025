@@ -23,7 +23,7 @@
           <div v-for="(value, i) in info.slice(0, 4)" :key="value.title">
             <div class="justify-start align-center d-flex flex-row mt-3">
               <div class="custom-icon-border" :class="isDesktop? 'border-size-desktop': 'border-size-phone'">
-                  <img :src="value.icon" alt="school" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
+                  <NuxtImg :src="value.icon" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
               </div>
               <div class="text-orange ml-4 text-start"
                   :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium'">
@@ -37,7 +37,7 @@
           <div v-for="(value, i) in info.slice(4, 8)" :key="value.title">
             <div class="justify-start align-center d-flex flex-row mt-3">
               <div class="custom-icon-border" :class="isDesktop? 'border-size-desktop': 'border-size-phone'">
-                  <img :src="value.icon" alt="school" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
+                  <NuxtImg :src="value.icon" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
               </div>
               <div class="text-orange ml-4 text-start"
                   :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium'">
