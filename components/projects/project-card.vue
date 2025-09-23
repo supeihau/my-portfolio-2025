@@ -54,7 +54,7 @@
                 cols="12" sm="6" md="6" lg="6" 
                 :class="isDesktop ? 'order-sm-2 order-1' : 'order-1'"
             >
-                <NuxtImg :src="props.project.picture" alt="project-pic" class="w-100"/>
+                <NuxtImg :src="props.project.picture" alt="project-pic" class="w-100 custom-rounded-md"/>
             </v-col>
         </v-row>
     </div>
