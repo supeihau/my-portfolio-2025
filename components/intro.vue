@@ -1,6 +1,6 @@
 <template>
     <v-row class="px-md-12 px-lg-16 px-8 custom-bg">
-        <v-col cols="12" sm="6" md="6" lg="7" class="d-flex align-center pa-0">
+        <v-col cols="12" sm="6" md="6" lg="7" class="d-flex align-center pa-0 pl-lg-6">
             <div class="d-flex flex-column align-start justify-start">
                 <div class="text-brown"
                     :class="isDesktop ? 'text-h1-semi-bold': 'text-h2-semi-bold'">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </v-col>
-        <v-col cols="12" sm="6" md="6" lg="5" class="d-flex align-center justify-center justify-md-end" :class="!isDesktop && 'mt-5 pa-0'">
+        <v-col cols="12" sm="6" md="6" lg="5" class="d-flex align-center justify-center justify-md-end pr-lg-6" :class="!isDesktop && 'mt-5 pa-0'">
             <NuxtImg src="/images/intro-pic.png" alt="intro-pic" :class="isDesktop? 'profile-desktop' : 'w-100'"/>
         </v-col>
     </v-row>

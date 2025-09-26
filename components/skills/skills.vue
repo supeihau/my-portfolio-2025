@@ -1,6 +1,6 @@
 <template>
     <v-row class="px-md-12 px-lg-13 px-5 custom-top-effect" align="stretch">
-        <v-col cols="12" sm="6" md="6" lg="6" >
+        <v-col cols="12" sm="6" md="6" lg="6" class="pl-lg-8">
             <div
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height"
                 :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-5 custom-rounded-md'"
@@ -38,7 +38,7 @@
             </div>
         </v-col>
 
-        <v-col cols="12" sm="6" md="6" lg="6" >
+        <v-col cols="12" sm="6" md="6" lg="6" class="pr-lg-8">
             <div 
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
                 :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-5 custom-rounded-md'"   
@@ -76,7 +76,7 @@
             </div>
         </v-col>
 
-        <v-col cols="12" sm="12" md="12" lg="12">
+        <v-col cols="12" sm="12" md="12" lg="12" class="px-lg-8">
             <div 
                 class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
                 :class="isDesktop ? 'px-7 py-10 custom-rounded-lg': 'px-2 py-4 custom-rounded-md'"   

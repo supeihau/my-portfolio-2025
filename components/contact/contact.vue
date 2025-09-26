@@ -18,7 +18,7 @@
       <div class="text-brown text-h3-semi-bold mb-3 text-center">
           Personal Information
       </div>
-      <v-row :class="isDesktop? 'mt-10': 'mt-3'">
+      <v-row :class="isDesktop? 'mt-10 px-4': 'mt-3'">
         <v-col col="12" md="6" lg="6" class="mb-0">
           <div v-for="(value, i) in info.slice(0, 4)" :key="value.title">
             <div class="justify-start align-center d-flex flex-row mt-3">

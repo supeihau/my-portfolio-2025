@@ -1,6 +1,6 @@
 <template>
   <v-app-bar class="bg-yellow px-lg-16 px-3">
-    <div class="d-none d-lg-flex align-center justify-center">
+    <div class="d-none d-lg-flex align-center justify-center px-4">
       <span class="text-white text-h6-semi-bold pr-5">Home</span>
       <span class="text-white text-h6-semi-bold pr-5">Skills</span>
       <span class="text-white text-h6-semi-bold pr-5">Projects</span>

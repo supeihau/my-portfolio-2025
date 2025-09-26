@@ -111,3 +111,10 @@
 .custom-rounded-sm {
   border-radius: 16px !important;
 }
+
+@media (max-width: 992px) {
+  .custom-padding-lg {
+    padding: 82px !important;
+  }
+}
+
