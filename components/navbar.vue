@@ -1,5 +1,8 @@
 <template>
-  <v-app-bar class="bg-yellow px-lg-16 px-3">
+  <v-app-bar class=" px-lg-16 px-3" 
+    :class="navBg ? 'bg-yellow' : 'bg-transparent'" 
+    elevation="0"
+  >
     <div 
       v-for="(item, i) in state.items" :key="i" :value="i"
       class="d-none d-lg-flex align-center justify-center px-2"
@@ -13,7 +16,7 @@
     </div>
 
     <v-app-bar-nav-icon
-      v-if="!isDesktop"
+      v-if="!isDesktop && navBg"
       variant="text"
       color="white"
       @click.stop="drawer = !drawer"
@@ -49,6 +52,7 @@ import useInnerWidth from '~/composables/useInnerWidth';
 
 const { isDesktop } = useInnerWidth();
 
+const navBg = ref(false);
 const drawer = ref(false);
 
 const state = reactive({
@@ -60,6 +64,13 @@ const state = reactive({
   ],
 });
 
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+
 const scrollTo = (id) => {
   const el = document.getElementById(id);
   if (el) {
@@ -68,9 +79,23 @@ const scrollTo = (id) => {
   // 如果是手機，點了之後順便關掉 drawer
   drawer.value = false;
 };
+
+const handleScroll = () => {
+  navBg.value = window.scrollY > 50;
+};
 </script>
 
 <style lang="scss" scoped>
+.bg-transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:deep(.v-app-bar) {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 :deep(.custom-menu) {
   min-height: calc(100vh - 64px);
   position: fixed;
@@ -78,6 +103,7 @@ const scrollTo = (id) => {
   border-radius: 0;
   padding-top: 0px;
   padding-bottom: 0px;
+  background-color: #FEF4EA !important;
 }
 
 :deep(.custom-list-item) {
@@ -93,6 +119,6 @@ const scrollTo = (id) => {
 }
 
 :deep(.v-navigation-drawer__scrim) {
-  background-color: #F5B85D;
+  background-color: #F5B85D !important;
 }
 </style>

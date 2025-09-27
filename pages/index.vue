@@ -1,12 +1,10 @@
 <template>
   <v-app>
     <NavBar></NavBar>
-    <v-main>
-      <Intro></Intro>
-      <Skills></Skills>
-      <Projects></Projects>
-      <Contact></Contact>
-    </v-main>
+    <Intro></Intro>
+    <Skills></Skills>
+    <Projects></Projects>
+    <Contact></Contact>
   </v-app>
 </template>
 

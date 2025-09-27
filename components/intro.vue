@@ -37,15 +37,31 @@ const { isDesktop } = useInnerWidth();
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-bottom: 100px;
 }
 
 .profile-desktop {
-    width: 90%;
+    width: 88%;
+    animation: updown 3s linear infinite;
 }
 
 .profile-phone {
     width: 100%;
+    animation: updown 3s linear infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-15px);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
 }
 </style>

@@ -185,7 +185,7 @@ const hardskills = ref([
 }
 
 .custom-top-effect {
-    top: -80px; 
+    top: -60px; 
     position: relative;
 }
 </style>
