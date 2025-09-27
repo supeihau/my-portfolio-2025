@@ -1,20 +1,20 @@
 <template>
-    <div class="alert-fixed-top">
-      <v-alert
-        v-if="state.apiStatus === 'success'"
-        variant="outlined"
-        title="已成功送出"
-        type="success"
-      ></v-alert>
-      <v-alert
-        v-if="state.apiStatus === 'error'"
-        variant="outlined"
-        title="送出失敗，請稍後再試"
-        type="error"
-      ></v-alert>
-    </div>
-
-    <div class="px-md-12 px-lg-16 px-7 py-16">
+  <div class="alert-fixed-top">
+    <v-alert
+      v-if="state.apiStatus === 'success'"
+      variant="outlined"
+      title="已成功送出"
+      type="success"
+    ></v-alert>
+    <v-alert
+      v-if="state.apiStatus === 'error'"
+      variant="outlined"
+      title="送出失敗，請稍後再試"
+      type="error"
+    ></v-alert>
+  </div>
+  <section id="contact">
+    <div class="px-md-12 px-lg-16 px-7 py-16" >
       <div class="text-brown text-h3-semi-bold mb-3 text-center">
           Personal Information
       </div>
@@ -130,6 +130,7 @@
         </v-card>
       </v-dialog>
     </div>
+  </section>
 </template>
 
 <script setup>

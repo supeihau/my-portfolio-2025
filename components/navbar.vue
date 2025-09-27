@@ -4,7 +4,12 @@
       v-for="(item, i) in state.items" :key="i" :value="i"
       class="d-none d-lg-flex align-center justify-center px-2"
     >
-      <span class="text-white text-h6-semi-bold pr-5">{{ item.title }}</span>
+      <span 
+        class="text-white text-h6-semi-bold pr-5"
+        @click="scrollTo(item.targetId)"
+      >
+        {{ item.title }}
+      </span>
     </div>
 
     <v-app-bar-nav-icon
@@ -26,7 +31,10 @@
           :value="i"
           class="custom-list-item"
         >
-          <v-list-item-title class="text-brown">
+          <v-list-item-title 
+            class="text-brown" 
+            @click="scrollTo(item.targetId)"
+          >
             {{ item.title }}
           </v-list-item-title>
         </v-list-item>
@@ -36,7 +44,7 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import useInnerWidth from '~/composables/useInnerWidth';
 
 const { isDesktop } = useInnerWidth();
@@ -45,13 +53,21 @@ const drawer = ref(false);
 
 const state = reactive({
   items: [
-    { title: 'Intro' },
-    { title: 'Skills' },
-    { title: 'Projects' },
-    { title: 'Contact' },
+    { title: 'Intro', targetId: 'intro' },
+    { title: 'Skills', targetId: 'skills' },
+    { title: 'Projects', targetId: 'projects' },
+    { title: 'Contact', targetId: 'contact' },
   ],
 });
 
+const scrollTo = (id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+  // 如果是手機，點了之後順便關掉 drawer
+  drawer.value = false;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -76,7 +92,7 @@ const state = reactive({
   font-weight: 500;
 }
 
-:deep .v-navigation-drawer__scrim {
+:deep(.v-navigation-drawer__scrim) {
   background-color: #F5B85D;
 }
 </style>

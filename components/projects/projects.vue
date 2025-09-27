@@ -1,4 +1,5 @@
 <template>
+  <section id="projects">
     <div class="px-md-12 px-lg-16 px-7 py-16 bg-light-yellow">
         <div class="text-brown text-h3-semi-bold mb-3 text-center">
             Projects
@@ -20,6 +21,7 @@
           {{ expand ? 'View Less' : 'View More' }}
       </div>
     </div>
+  </section>
 </template>
 
 <script setup>
