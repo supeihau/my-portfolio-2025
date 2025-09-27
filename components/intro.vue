@@ -18,7 +18,7 @@
                 </div>
             </v-col>
             <v-col cols="12" sm="6" md="6" lg="5" class="d-flex align-center justify-center justify-md-end pr-lg-6" :class="!isDesktop && 'mt-5 pa-0'">
-                <NuxtImg src="/images/intro-pic.png" alt="intro-pic" :class="isDesktop? 'profile-desktop' : 'w-100'"/>
+                <NuxtImg src="/images/intro-pic.png" alt="intro-pic" :class="isDesktop? 'profile-desktop' : 'profile-phone'"/>
             </v-col>
         </v-row>
     </section>
@@ -37,7 +37,7 @@ const { isDesktop } = useInnerWidth();
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 150px;
+    padding-top: 100px;
     padding-bottom: 100px;
 }
 
