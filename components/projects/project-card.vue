@@ -15,7 +15,7 @@
                         {{ props.project.title }}
                     </div>
                     <div class="text-brown text-h6-regular mb-5">
-                        上次更新時間：{{ props.project.updatedAt }}
+                        上次更新時間：{{ props.project.pushAt }}
                     </div>
                     <div class="flex-grow-1">
                         <div 

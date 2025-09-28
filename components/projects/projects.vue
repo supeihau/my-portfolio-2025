@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import useInnerWidth from '~/composables/useInnerWidth';
 import ProjectCard from './project-card.vue';
 
@@ -35,7 +35,7 @@ const projects = ref([
   {
     title: '線上作品集',
     repoInfo: 'supeihau/my-profolio-2025',
-    updatedAt: '',
+    pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'Vue'],
     picture: '/images/propject/timetable.png',
     designConceptUrl: 'https://ithelp.ithome.com.tw/users/20178581/ironman/8757?page=1',
@@ -43,8 +43,8 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 學期預排課表',
-    repoInfo: 'ba2c7yoyo/NcueHuLoLo-v2025/branchs/timetable-ver3-selina-250616-1',
-    updatedAt: '',
+    repoInfo: 'ba2c7yoyo/NcueHuLoLo-v2025/branches/timetable-selina-0517-1',
+    pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     picture: '/images/propject/timetable.png',
     designConceptUrl: 'TODO',
@@ -52,8 +52,8 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 評價審核與查詢',
-    repo: 'ba2c7yoyo/NcueHuLoLo-v2025/branchs/admin-publish-selina-250215-1',
-    updatedAt: '',
+    repoInfo: 'ba2c7yoyo/NcueHuLoLo-v2025/branches/admin-pulish-selina-250215-1',
+    pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     picture: '/images/propject/admin-publish.png',
     designConceptUrl: 'TODO',
@@ -61,24 +61,24 @@ const projects = ref([
   },
   {
     title: '科學毛怪 - 產品系統',
-    repo:'ba2c7yoyo/PetSci-gogomaumau',
-    updatedAt: '',
+    repoInfo:'ba2c7yoyo/PetSci-gogomaumau',
+    pushAt: '',
     skills: ['FrontEnd', 'React', 'Atomize'],
     picture: '/images/propject/gogomaumau.png',
     productUrl: 'https://gogomaumau.petsci.tw/',
   },
   {
     title: '科學毛怪 - 產品官網',
-    repo: 'ba2c7yoyo/PetSci-Bussiness-Web',
-    updatedAt: '',
+    repoInfo: 'ba2c7yoyo/PetSci-Bussiness-Web',
+    pushAt: '',
     skills: ['FrontEnd', 'React', 'Atomize'],
     picture: '/images/propject/petsci.png',
     productUrl: 'https://petsci.tw/',
   },
   {
     title: '彰師小生物 - 一頁式網頁',
-    repo: 'supeihau/hulolo-landing-page',
-    updatedAt: '2024-06-01',
+    repoInfo: 'supeihau/hulolo-landing-pages',
+    pushAt: '2024-06-01',
     skills: ['FrontEnd', 'JavaScript'],
     picture: '/images/propject/hulolo-price.png',
     productUrl: 'https://ncuehulolo.idv.tw/subscribe/',
@@ -87,13 +87,44 @@ const projects = ref([
 
 const expand = ref(false);
 
+onMounted(() => {
+  projects.value.forEach(async (project) => {
+    if (project.repoInfo) {
+      const data = await getRepoInfo(project.repoInfo);
+      if (data && data.pushed_at) {
+        project.pushAt = new Date(data.pushed_at).toLocaleDateString();
+      } else {
+        project.pushAt = new Date(data.commit.commit.author.date).toLocaleDateString();
+      }
+    } else {
+      project.pushAt = '無更新時間';
+    }
+  });
+});
+
+// computed
 const visibleProjects = computed(() =>
   expand.value ? projects.value : projects.value.slice(0, 2)
 );
 
+// methods
 const toggleExpand = () => {
   expand.value = !expand.value;
-}
+};
+
+const getRepoInfo = async (repo) => {
+  const res = await fetch(
+    `https://api.github.com/repos/${repo}`,
+    {
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+        Accept: "application/vnd.github+json"
+      }
+    }
+  );
+  const data = await res.json();
+  return data;
+};
 </script>
 
 <style lang="scss" scoped>
