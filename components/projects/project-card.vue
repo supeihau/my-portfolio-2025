@@ -32,12 +32,12 @@
                     :class="isDesktop || isPad? 'flex-row ga-3': 'flex-column ga-3'"
                 >
                     <CustomButton
-                        v-if="props.project.designConcept != ''"
+                        v-if="props.project.designConceptUrl != ''"
                         :type="'outlined'"
                         :btnName="'設計理念'"
                         :class="'bg-white text-orange'"
                         :has-icon="true"
-                        @click="window.open(props.project.designConcept, '_blank')"
+                        @click="openLink(props.project.designConceptUrl)"
                     />
 
                      <CustomButton
@@ -46,7 +46,7 @@
                         :btnName="'產品網址'"
                         :class="'bg-orange text-white'"
                         :has-icon="true"
-                        @click="window.open(props.project.productUrl, '_blank')"
+                        @click="openLink(props.project.productUrl)"
                     />
                 </div>
             </v-col>
@@ -74,6 +74,10 @@ const props = defineProps({
     }
 });
 
+const openLink = (url) => {
+  if (!url) return
+  if (typeof window !== 'undefined') window.open(url, '_blank')
+};
 </script>
 
 <style lang="scss" scoped>
