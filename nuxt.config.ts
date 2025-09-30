@@ -23,7 +23,8 @@ export default defineNuxtConfig({
         // Favicon
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ]
-    }
+    },
+    baseURL: '/my-portfolio-2025/'
   },
   css: [
     'vuetify/styles',

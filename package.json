@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages -d .output/public"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.2.2",
+    "gh-pages": "^6.3.0",
     "sass": "^1.91.0",
     "sass-loader": "^16.0.5"
   }
