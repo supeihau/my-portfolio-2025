@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ]
     },
-    baseURL: '/my-portfolio-2025/'
+    baseURL: '/my-portfolio-2025/',
   },
   css: [
     'vuetify/styles',
@@ -43,4 +43,7 @@ export default defineNuxtConfig({
     ],
   },
   modules: ['@nuxt/image-edge'],
+  nitro: {
+    preset: 'github_pages'
+  },
 })
