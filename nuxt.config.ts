@@ -24,7 +24,8 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ]
     },
-    baseURL: '/my-portfolio-2025/',
+    baseURL: process.env.NODE_ENV === 'production' ? '/my-portfolio-2025/' : '/',
+    buildAssetsDir: '/static/'
   },
   css: [
     'vuetify/styles',
@@ -51,5 +52,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/**': { prerender: true }
-  }
+  },
+  
 })

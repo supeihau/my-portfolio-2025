@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages -d .output/public -b gh-pages"
+    "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
