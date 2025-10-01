@@ -7,7 +7,7 @@
                         :class="isDesktop ? 'text-h1-semi-bold': 'text-h2-semi-bold'">
                         Hi, 我的名字
                     </div>
-                    <div class="text-yellow text-h1-semi-bold"
+                    <div class="text-main-yellow text-h1-semi-bold"
                         :class="isDesktop ? 'text-h1-semi-bold': 'text-h2-semi-bold'">
                         應徵工作職稱
                     </div>

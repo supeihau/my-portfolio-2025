@@ -25,7 +25,7 @@
               <div class="custom-icon-border" :class="isDesktop? 'border-size-desktop': 'border-size-phone'">
                   <NuxtImg :src="value.icon" alt="contact-icon" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
               </div>
-              <div class="text-orange ml-4 text-start"
+              <div class="text-main-orange ml-4 text-start"
                   :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium'">
                   {{ value.title }}
               </div>
@@ -39,7 +39,7 @@
               <div class="custom-icon-border" :class="isDesktop? 'border-size-desktop': 'border-size-phone'">
                   <NuxtImg :src="value.icon"  alt="contact-icon" :class="isDesktop? 'img-size-desktop': 'img-size-phone'"/>
               </div>
-              <div class="text-orange ml-4 text-start"
+              <div class="text-main-orange ml-4 text-start"
                   :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium'">
                   {{ value.title }}
               </div>
@@ -52,7 +52,7 @@
         <CustomButton
           :type="'elevated'"
           :btnName="'聯絡我'"
-          :class="'bg-orange text-white'"
+          :class="'bg-main-orange text-white'"
           :has-icon="false"
           @click="openDialog()"
         />
@@ -114,14 +114,14 @@
               <CustomButton
                 :type="'outlined'"
                 :btnName="'取消'"
-                :class="'bg-white text-orange'"
+                :class="'bg-white text-main-orange'"
                 :has-icon="false"
                 @click="closeDialog()"
               />
               <CustomButton
                 :type="'elevated'"
                 :btnName="'送出'"
-                :class="'bg-orange text-white'"
+                :class="'bg-main-orange text-white'"
                 :has-icon="false"
                 @click="send()"
               />

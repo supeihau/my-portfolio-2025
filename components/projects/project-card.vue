@@ -35,7 +35,7 @@
                         v-if="props.project.designConceptUrl != ''"
                         :type="'outlined'"
                         :btnName="'設計理念'"
-                        :class="'bg-white text-orange'"
+                        :class="'bg-white text-main-orange'"
                         :has-icon="true"
                         @click="openLink(props.project.designConceptUrl)"
                     />
@@ -44,7 +44,7 @@
                         v-if="props.project.productUrl != ''"
                         :type="'elevated'"
                         :btnName="'產品網址'"
-                        :class="'bg-orange text-white'"
+                        :class="'bg-main-orange text-white'"
                         :has-icon="true"
                         @click="openLink(props.project.productUrl)"
                     />

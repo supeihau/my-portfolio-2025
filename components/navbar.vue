@@ -1,6 +1,6 @@
 <template>
   <v-app-bar class=" px-lg-16 px-3" 
-    :class="navBg ? 'bg-yellow' : 'bg-transparent'" 
+    :class="navBg ? 'bg-main-yellow' : 'bg-transparent'" 
     elevation="0"
   >
     <div 

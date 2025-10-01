@@ -18,7 +18,7 @@
         </div>
         <div 
             v-for="value in props.hardskills.skills"
-            class="text-orange"
+            class="text-main-orange"
             :class="isDesktop ? 'text-h5-semi-bold': 'text-h6-semi-bold'"
         >
             # {{ value }}

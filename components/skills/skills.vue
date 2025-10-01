@@ -25,7 +25,7 @@
                                     :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'">
                                     {{ value.time }}
                                 </div>
-                                <div class="text-orange mt-2"
+                                <div class="text-main-orange mt-2"
                                     :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold '">
                                     {{ value.position }}
                                 </div>
@@ -60,7 +60,7 @@
                                 :class="isDesktop ? 'flex-grow-1 px-6 py-3 custom-rounded-md': 'px-4 py-2 custom-rounded-sm'"
                             >
                                 <div 
-                                    class=" text-orange"
+                                    class=" text-main-orange"
                                     :class="isDesktop ? 'text-h4-semi-bold': 'text-h5-semi-bold'"
                                 >
                                     {{ value.number }}
