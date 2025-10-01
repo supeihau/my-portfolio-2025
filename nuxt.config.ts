@@ -44,6 +44,12 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/image-edge'],
   nitro: {
-    preset: 'github_pages'
+    preset: 'github_pages',
+    prerender: {
+      routes: ['/'],
+    }
   },
+  routeRules: {
+    '/**': { prerender: true }
+  }
 })
