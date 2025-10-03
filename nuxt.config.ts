@@ -24,8 +24,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ]
     },
-    baseURL: process.env.NODE_ENV === 'production' ? '/my-portfolio-2025/' : '/',
-    buildAssetsDir: '/static/'
+    baseURL: '/'
   },
   css: [
     'vuetify/styles',
@@ -44,12 +43,6 @@ export default defineNuxtConfig({
     ],
   },
   modules: ['@nuxt/image-edge'],
-  nitro: {
-    preset: 'github_pages',
-    prerender: {
-      routes: ['/'],
-    }
-  },
   routeRules: {
     '/**': { prerender: true }
   },
