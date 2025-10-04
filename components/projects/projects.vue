@@ -34,7 +34,8 @@ const { isDesktop } = useInnerWidth();
 const projects = ref([
   {
     title: '線上作品集',
-    repoInfo: 'supeihau/my-profolio-2025',
+    ownerRepo: 'supeihau/my-portfolio-2025',
+    branch: 'main',
     pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'Vue'],
     picture: 'images/project/timetable.png',
@@ -43,7 +44,8 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 學期預排課表',
-    repoInfo: 'ba2c7yoyo/NcueHuLoLo-v2025/branches/timetable-selina-0517-1',
+    ownerRepo: 'ba2c7yoyo/NcueHuLoLo-v2025',
+    branch: 'timetable-selina-0517-1',
     pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     picture: 'images/project/timetable.png',
@@ -52,7 +54,8 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 評價審核與查詢',
-    repoInfo: 'ba2c7yoyo/NcueHuLoLo-v2025/branches/admin-pulish-selina-250215-1',
+    ownerRepo: 'ba2c7yoyo/NcueHuLoLo-v2025',
+    branch: 'admin-pulish-selina-250215-1',
     pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     picture: 'images/project/admin-publish.png',
@@ -61,7 +64,8 @@ const projects = ref([
   },
   {
     title: '科學毛怪 - 產品系統',
-    repoInfo:'ba2c7yoyo/PetSci-gogomaumau',
+    ownerRepo:'ba2c7yoyo/PetSci-gogomaumau',
+    branch: 'master',
     pushAt: '',
     skills: ['FrontEnd', 'React', 'Atomize'],
     picture: 'images/project/gogomaumau.png',
@@ -69,7 +73,8 @@ const projects = ref([
   },
   {
     title: '科學毛怪 - 產品官網',
-    repoInfo: 'ba2c7yoyo/PetSci-Bussiness-Web',
+    ownerRepo: 'ba2c7yoyo/PetSci-Bussiness-Web',
+    branch: 'main',
     pushAt: '',
     skills: ['FrontEnd', 'React', 'Atomize'],
     picture: 'images/project/petsci.png',
@@ -77,7 +82,8 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 一頁式網頁',
-    repoInfo: 'supeihau/hulolo-landing-pages',
+    ownerRepo: 'supeihau/hulolo-landing-pages',
+    branch: 'main',
     pushAt: '2024-06-01',
     skills: ['FrontEnd', 'JavaScript'],
     picture: 'images/project/hulolo-price.png',
@@ -89,13 +95,9 @@ const expand = ref(false);
 
 onMounted(() => {
   projects.value.forEach(async (project) => {
-    if (project.repoInfo) {
-      const data = await getRepoInfo(project.repoInfo);
-      if (data && data.pushed_at) {
-        project.pushAt = new Date(data.pushed_at).toLocaleDateString();
-      } else {
-        project.pushAt = new Date(data.commit.commit.author.date).toLocaleDateString();
-      }
+    if (project.ownerRepo && project.branch) {
+      const data = await getRepoInfo(project.ownerRepo, project.branch);
+      project.pushAt = new Date(data.pushAt).toLocaleDateString();
     } else {
       project.pushAt = '無更新時間';
     }
@@ -112,18 +114,13 @@ const toggleExpand = () => {
   expand.value = !expand.value;
 };
 
-const getRepoInfo = async (repo) => {
-  const res = await fetch(
-    `https://api.github.com/repos/${repo}`,
-    {
-      headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-        Accept: "application/vnd.github+json"
-      }
-    }
-  );
-  const data = await res.json();
-  return data;
+const getRepoInfo = async (repo, branch) => {
+  try {
+    const res = await $fetch(`/api/github/branch?repo=${repo}&branch=${branch}`)
+    return res;
+  } catch (error) {
+    return;
+  }
 };
 </script>
 

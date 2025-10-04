@@ -46,5 +46,10 @@ export default defineNuxtConfig({
   routeRules: {
     '/**': { prerender: true }
   },
+  runtimeConfig: {
+    githubToken: process.env.VITE_GITHUB_TOKEN,
+    public: {}
+  },
+  nitro: { preset: 'vercel' }
   
 })
