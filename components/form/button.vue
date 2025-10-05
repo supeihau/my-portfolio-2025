@@ -1,6 +1,6 @@
 <template>
     <v-btn
-        :append-icon="hasIcon && props.appendIcon"
+        :append-icon="showAppendIcon"
         rounded="xl" 
         size="large" 
         class="text-h5-medium px-7"
@@ -49,7 +49,11 @@ const props = defineProps({
 
 const emit = defineEmits(['click']);
 
-function onClick() {
+const showAppendIcon = computed(() => {
+    return props.hasIcon ? props.appendIcon : '';
+});
+
+const onClick = () => {
   emit('click');
 }
 </script>
