@@ -8,6 +8,8 @@
       class="d-none d-lg-flex align-center justify-center px-2"
     >
       <span 
+        role="button"
+        tabindex="0"
         class="text-white text-h6-semi-bold pr-5"
         @click="scrollTo(item.targetId)"
       >
@@ -26,6 +28,7 @@
       v-model="drawer"
       location="left"
       temporary
+      aria-label="Main menu"
     >
       <v-list class="bg-light-yellow custom-menu">
         <v-list-item
