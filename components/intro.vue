@@ -24,6 +24,8 @@
                     :class="isDesktop? 'profile-desktop' : 'profile-phone'" 
                     preload
                     fetchpriority="high" 
+                    format="webp"
+                    loading="lazy"
                 />
             </v-col>
         </v-row>
