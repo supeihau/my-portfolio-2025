@@ -22,7 +22,10 @@ export default defineNuxtConfig({
       link: [
         // Favicon
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ]
+      ],
+      htmlAttrs: {
+        lang: 'zh-Hant'
+      },
     },
     baseURL: '/'
   },
