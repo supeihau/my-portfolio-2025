@@ -16,5 +16,5 @@ import Projects from '@/components/projects/projects.vue';
 import Contact from '../components/contact/contact.vue';
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
