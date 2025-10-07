@@ -74,7 +74,15 @@
         :model-value="state.dialog"
         max-width="600"
       >
-        <v-card title="聯絡我">
+        <v-card>
+          <v-toolbar flat color="white">
+            <v-toolbar-title class="text-main-orange">聯絡我</v-toolbar-title>
+            <v-spacer />
+            <v-btn icon @click="closeDialog()">
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+          </v-toolbar>
+
           <v-card-text>
             <v-form ref="formRef">
               <v-row dense>
@@ -123,13 +131,6 @@
 
           <v-card-actions>
             <div class="w-100 d-flex justify-center pa-4 ga-4">
-              <CustomButton
-                :type="'outlined'"
-                :btnName="'取消'"
-                :class="'bg-white text-main-orange'"
-                :has-icon="false"
-                @click="closeDialog()"
-              />
               <CustomButton
                 :type="'elevated'"
                 :btnName="'送出'"
@@ -284,6 +285,11 @@ const send = async () => {
   width: 400px;
   max-width: 90vw;
   pointer-events: none;
+}
+
+:deep .v-toolbar-title {
+  font-size: 24px;
+  font-weight: 900;
 }
 
 
