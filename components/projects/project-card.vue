@@ -82,7 +82,9 @@ const props = defineProps({
 
 const openLink = (url) => {
   if (!url) return
-  if (typeof window !== 'undefined') window.open(url, '_blank')
+  if (typeof window !== 'undefined') {
+    window.open(url, '_blank')
+  }
 };
 </script>
 

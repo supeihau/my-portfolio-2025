@@ -40,7 +40,7 @@ const projects = ref([
     skills: ['UIUX', 'FrontEnd', 'Vue'],
     picture: 'images/project/timetable.png',
     designConceptUrl: 'https://ithelp.ithome.com.tw/users/20178581/ironman/8757?page=1',
-    productUrl: 'TODO',
+    productUrl: 'https://my-portfolio-2025-mauve-zeta.vercel.app/',
   },
   {
     title: '彰師小生物 - 學期預排課表',
@@ -49,7 +49,7 @@ const projects = ref([
     pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     picture: 'images/project/timetable.png',
-    designConceptUrl: 'TODO',
+    designConceptUrl: '/pdf/hulolo-timetable.pdf',
     productUrl: 'https://ncuehulolo.idv.tw/timetable/',
   },
   {
@@ -59,7 +59,7 @@ const projects = ref([
     pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'JavaScript'],
     picture: 'images/project/admin-publish.png',
-    designConceptUrl: 'TODO',
+    designConceptUrl: '/pdf/hulolo-admin-publish.pdf',
     productUrl: 'https://lin.ee/grDXyk2',
   },
   {
