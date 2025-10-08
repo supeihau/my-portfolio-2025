@@ -16,12 +16,11 @@ export default defineNuxtConfig({
         { property: 'og:title', content: '線上作品集 | 蘇姵華' },
         { property: 'og:description', content: '蘇姵華的個人作品集，結合 UI/UX 設計與前端開發，熟悉 Nuxt 3、Vue、React 與 Figma。展示從設計到程式實作的專案成果，專注於美感、使用體驗與程式碼可維護性，致力於打造兼具創意與效能的數位產品。' },
         { property: 'og:type', content: 'website' },
-        // TODO: { property: 'og:url', content: 'https://example.com' },
-        // TODO: { property: 'og:image', content: 'https://example.com/cover.jpg' },
+        { property: 'og:url', content: 'https://my-portfolio-2025-mauve-zeta.vercel.app/' },
       ],
       link: [
         // Favicon
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       ],
       htmlAttrs: {
         lang: 'zh-Hant'
