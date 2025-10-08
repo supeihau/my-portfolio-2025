@@ -1,7 +1,8 @@
 <template>
   <section id="projects">
     <div class="px-md-12 px-lg-16 px-7 py-16 bg-light-yellow">
-        <div class="text-brown text-h3-semi-bold mb-3 text-center">
+        <div class="text-brown mb-3 text-center"
+            :class="isDesktop ? 'text-h2-small-semi-bold': 'text-h4-semi-bold'">
             Projects
         </div>
         <div class="mt-5 text-brown"
@@ -15,7 +16,7 @@
 
         <div
           class="text-brown text-center text-decoration-underline cursor-pointer"
-          :class="isDesktop ? 'text-h4-semi-bold mt-10' : 'text-h5-semi-bold mt-6'"
+          :class="isDesktop ? 'text-h4-medium mt-10' : 'text-h5-medium mt-6'"
           @click="toggleExpand"
         >
           {{ expand ? 'View Less' : 'View More' }}

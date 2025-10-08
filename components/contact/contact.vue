@@ -15,7 +15,8 @@
   </div>
   <section id="contact">
     <div class="px-md-12 px-lg-16 px-7 py-16" >
-      <div class="text-brown text-h3-semi-bold mb-3 text-center">
+      <div class="text-brown mb-3 text-center"
+        :class="isDesktop ? 'text-h2-small-semi-bold': 'text-h4-semi-bold'">
           Personal Information
       </div>
       <v-row :class="isDesktop? 'mt-10 px-4': 'mt-3'">

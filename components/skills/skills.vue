@@ -7,8 +7,8 @@
                     :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-5 custom-rounded-md'"
                 >
                     <div 
-                        class="text-white"
-                        :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold'"
+                        class="text-brown"
+                        :class="isDesktop ? 'text-h2-small-semi-bold my-3': 'text-h4-semi-bold'"
                     >
                         Work Experience
                     </div>
@@ -45,8 +45,8 @@
                     :class="isDesktop ? 'pa-10 custom-rounded-lg': 'pa-5 custom-rounded-md'"   
                 >
                     <div
-                        class="text-white"
-                        :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold'"
+                        class="text-brown"
+                        :class="isDesktop ? 'text-h2-small-semi-bold my-3': 'text-h4-semi-bold'"
                     >
                         Softskills 
                     </div>
@@ -83,8 +83,8 @@
                     :class="isDesktop ? 'px-7 py-10 custom-rounded-lg': 'px-2 py-4 custom-rounded-md'"   
                 >
                     <div
-                        class="text-white"
-                        :class="isDesktop ? 'text-h3-semi-bold': 'text-h4-semi-bold mb-3'"
+                        class="text-brown my-3"
+                        :class="isDesktop ? 'text-h2-small-semi-bold my-3': 'text-h4-semi-bold'"
                     >
                         Hardskills 
                     </div>
