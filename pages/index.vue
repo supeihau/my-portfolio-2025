@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <NavBar></NavBar>
+    <ClientOnly>
+      <NavBar></NavBar>
+    </ClientOnly>
     <Intro></Intro>
     <Skills></Skills>
     <Projects></Projects>
