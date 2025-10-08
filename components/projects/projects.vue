@@ -34,7 +34,7 @@ const { isDesktop } = useInnerWidth();
 
 const projects = ref([
   {
-    title: '線上作品集',
+    title: '2025 鐵人賽 - 30 天 Nuxt 自我挑戰',
     ownerRepo: 'supeihau/my-portfolio-2025',
     branch: 'main',
     pushAt: '',
