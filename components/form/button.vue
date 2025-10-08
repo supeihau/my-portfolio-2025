@@ -2,8 +2,8 @@
     <v-btn
         :append-icon="showAppendIcon"
         rounded="xl" 
-        size="large" 
-        class="text-h5-medium px-7"
+        :size="isDesktop? 'x-large' : 'large'" 
+        class="px-7"
         :class="props.class"
         :variant="props.type"
         :disabled="props.disabled"
@@ -14,6 +14,10 @@
 </template>
 
 <script setup> 
+import useInnerWidth from '~/composables/useInnerWidth';
+
+const { isDesktop } = useInnerWidth();
+
 const props = defineProps({
     type: {
         type: String,
@@ -55,8 +59,8 @@ const showAppendIcon = computed(() => {
 
 const onClick = () => {
   emit('click');
-}
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>
