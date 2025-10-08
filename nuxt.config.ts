@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       title: '線上作品集 | 蘇姵華',
       meta: [
         // google search console
-        { name: 'google-site-verification', content: 'W3i6l7UHdrboj7ynZ04XvsFSF8KlFePXOKzc6rsikHw' },
+        { name: 'google-site-verification', content: '68sNRLkX562B2BIK74ETTVbKqxDF8BWPyDjws6yT8BM' },
         // 基本 SEO
         { name: 'description', content: '蘇姵華的個人作品集，結合 UI/UX 設計與前端開發，熟悉 Nuxt 3、Vue、React 與 Figma。展示從設計到程式實作的專案成果，專注於美感、使用體驗與程式碼可維護性，致力於打造兼具創意與效能的數位產品。' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
