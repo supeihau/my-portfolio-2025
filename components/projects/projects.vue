@@ -39,7 +39,7 @@ const projects = ref([
     branch: 'main',
     pushAt: '',
     skills: ['UIUX', 'FrontEnd', 'Vue'],
-    picture: 'images/project/timetable.png',
+    picture: 'images/project/ithome.png',
     designConceptUrl: 'https://ithelp.ithome.com.tw/users/20178581/ironman/8757?page=1',
     productUrl: 'https://my-portfolio-2025-mauve-zeta.vercel.app/',
   },

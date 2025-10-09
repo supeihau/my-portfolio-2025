@@ -5,11 +5,11 @@
                 <div class="d-flex flex-column align-start justify-start">
                     <div class="text-brown"
                         :class="isDesktop ? 'text-h1-semi-bold': 'text-h2-semi-bold'">
-                        Hi, 我的名字
+                        Hi, I'm Selina Su.
                     </div>
                     <div class="text-main-yellow text-h1-semi-bold"
                         :class="isDesktop ? 'text-h1-semi-bold': 'text-h2-semi-bold'">
-                        應徵工作職稱
+                        Design Engineer
                     </div>
                     <div class="mt-5 text-brown"
                         :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'">
