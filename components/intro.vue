@@ -1,6 +1,6 @@
 <template>
     <section id="intro">
-        <v-row class="px-md-12 px-lg-16 px-8 custom-bg">
+        <v-row class="custom-px-lg px-md-12 px-8 custom-bg custom-padding-lg">
             <v-col cols="12" sm="6" md="6" lg="7" class="d-flex align-center pa-0 pl-lg-6">
                 <div class="d-flex flex-column align-start justify-start">
                     <div class="text-brown"

@@ -14,7 +14,7 @@
     ></v-alert>
   </div>
   <section id="contact">
-    <div class="px-md-12 px-lg-16 px-7 py-16" >
+    <div class="custom-px-lg px-md-12 px-7 py-16" >
       <div class="text-brown mb-3 text-center"
         :class="isDesktop ? 'text-h2-small-semi-bold': 'text-h4-semi-bold'">
           Personal Information

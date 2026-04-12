@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="px-lg-16 px-3 d-flex justify-space-between align-center custom-border-bottom" 
+  <v-app-bar class="custom-px-lg px-3 d-flex justify-space-between align-center custom-border-bottom" 
     :class="navBg ? 'bg-main-yellow' : 'bg-transparent'" 
     elevation="0"
   >

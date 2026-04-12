@@ -1,6 +1,6 @@
 <template>
     <section id="skills">
-        <v-row class="px-md-12 px-lg-13 px-5 custom-top-effect" align="stretch">
+        <v-row class="custom-px-lg px-md-12 px-5 custom-top-effect" align="stretch">
             <v-col cols="12" sm="6" md="6" lg="6" class="pl-lg-8">
                 <div
                     class="d-flex flex-column align-center justify-start bg-light-orange fill-height"
