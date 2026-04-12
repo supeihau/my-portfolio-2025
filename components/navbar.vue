@@ -1,22 +1,51 @@
 <template>
-  <v-app-bar class=" px-lg-16 px-3" 
+  <v-app-bar class="px-lg-16 px-3 d-flex justify-space-between align-center custom-border-bottom" 
     :class="navBg ? 'bg-main-yellow' : 'bg-transparent'" 
     elevation="0"
   >
-    <div 
-      v-for="(item, i) in state.items" :key="i" :value="i"
-      class="d-none d-lg-flex align-center justify-center px-2"
-    >
-      <span 
-        role="button"
-        tabindex="0"
-        class="text-white text-h6-semi-bold pr-5"
-        @click="scrollTo(item.targetId)"
+    <div class="d-none d-md-flex align-center justify-center">
+      <div 
+        v-for="(item, i) in state.items" :key="i" :value="i"
+        class="px-2"
       >
-        {{ item.title }}
-      </span>
+        <span 
+          role="button"
+          tabindex="0"
+          class="text-white text-h5-medium pr-8"
+          @click="scrollTo(item.targetId)"
+        >
+          {{ item.title }}
+        </span>
+      </div>
     </div>
-
+    
+    <div class="row d-flex flex-nowrap">
+      <div class="custom-icon-border mr-5"
+        :class="isDesktop? 'border-size-desktop': 'd-none border-size-phone'"
+        @click="openGitHub"
+      >
+        <NuxtImg 
+          :src="GitHubIcon"  
+          alt="contact-icon" 
+          :class="isDesktop? 'img-size-desktop': 'img-size-phone'" 
+          loading="lazy"
+          format="webp"
+        />
+      </div>
+      <div class="custom-icon-border" 
+        :class="isDesktop? 'border-size-desktop': 'd-none border-size-phone'"
+        @click="sendEmail"
+      >
+        <NuxtImg 
+          :src="EmailIcon"  
+          alt="contact-icon" 
+          :class="isDesktop? 'img-size-desktop': 'img-size-phone'" 
+          loading="lazy"
+          format="webp"
+        />
+      </div>
+    </div>
+    
     <v-app-bar-nav-icon
       v-if="!isDesktop && navBg"
       variant="text"
@@ -44,6 +73,24 @@
             {{ item.title }}
           </v-list-item-title>
         </v-list-item>
+
+        <v-list-item class="custom-list-item">
+          <v-list-item-title 
+            class="text-brown" 
+            @click="openGitHub"
+          >
+            Github
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-list-item class="custom-list-item">
+          <v-list-item-title 
+            class="text-brown" 
+            @click="sendEmail"
+          >
+            Email
+          </v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </v-app-bar>
@@ -52,6 +99,8 @@
 <script setup>
 import { reactive, ref } from 'vue';
 import useInnerWidth from '~/composables/useInnerWidth';
+import GitHubIcon from '@/assets/icon/github.svg';
+import EmailIcon from '@/assets/icon/email.svg';
 
 const { isDesktop } = useInnerWidth();
 
@@ -86,6 +135,14 @@ const scrollTo = (id) => {
 const handleScroll = () => {
   navBg.value = window.scrollY > 50;
 };
+
+const openGitHub = () => {
+  window.open('https://github.com/supeihau', '_blank');
+};
+
+const sendEmail = () => {
+  window.location.href = 'mailto: selina240@gmail.com';
+};
 </script>
 
 <style lang="scss" scoped>
@@ -94,9 +151,21 @@ const handleScroll = () => {
   box-shadow: none !important;
 }
 
+.custom-border-bottom {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
 :deep(.v-app-bar) {
   background: transparent !important;
   box-shadow: none !important;
+}
+
+:deep(.v-toolbar__content) {
+  @media screen and (min-width: 960px) {
+    justify-content: space-between !important;
+
+  }
 }
 
 :deep(.custom-menu) {
@@ -123,5 +192,17 @@ const handleScroll = () => {
 
 :deep(.v-navigation-drawer__scrim) {
   background-color: #F5B85D !important;
+}
+
+.custom-icon-border {
+  width: 40px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 2px solid #6F6C3E; 
+  padding: auto; 
+  border-radius: 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
 }
 </style>
