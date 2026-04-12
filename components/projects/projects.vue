@@ -5,13 +5,15 @@
             :class="isDesktop ? 'text-h2-small-semi-bold': 'text-h4-semi-bold'">
             Projects
         </div>
-        <div class="mt-5 text-brown"
-            :class="isDesktop ? 'text-h5-regular custom-padding': 'text-h6-regular'">
-            大學時期參與許多社團事務，包括彰師小生物、彰師大升學輔導種子計畫以及彰師大諮輔志工團。 其中「彰師小生物」是提供學生課程評價搜尋的服務，目前收錄1000則以上的評價回饋。我主要負責粉絲專頁的文案平面設計，以及網站平台前端網頁的建置與維護，目前粉專有1300的追蹤人數，平台有6500以上的使用者，也藉此累積了很多作品及經驗。
+        <div 
+          class="mt-5 text-brown"
+          :class="isDesktop ? 'text-h5-regular custom-padding': 'text-h6-regular'"
+        >
+          擁有豐富的前端開發實作經驗，曾參與逾萬名使用者的 Line Bot 產品「彰師小生物」，並在「科學毛怪」專案中展現高度的數據視覺化與跨裝置互動網頁。我喜歡探索新技術，近期正透過 AI 工具優化開發效率與個人產品孵化，實現產品的高效迭代；並透過文字記錄開發心法，持續從工程、產品與個人實踐轉化為正向的影響力。
         </div>
 
         <div v-for="(project, index) in visibleProjects" :key="index" class="px-lg-5">
-            <ProjectCard :project="project"></ProjectCard>
+          <ProjectCard :project="project" :index="index"></ProjectCard>
         </div>
 
         <div
@@ -34,7 +36,19 @@ const { isDesktop } = useInnerWidth();
 
 const projects = ref([
   {
+    title: '麻將輸贏即時記',
+    brief: '利用 AI 快速開發的麻將結算工具，整合 Google sheet 雲端同步，點擊間將混亂帳目轉化為精準戰績。',
+    ownerRepo: 'supeihau/mahjong',
+    branch: 'main',
+    pushAt: '',
+    skills: ['UIUX', 'JavaScript', 'Gemini AI'],
+    picture: 'images/project/majong.png',
+    designConceptUrl: '/pdf/ai-vibe-coding-majong.pdf',
+    productUrl: 'https://mahjong-oh7d.vercel.app/',
+  },
+  {
     title: '2025 鐵人賽 - 30 天 Nuxt 自我挑戰',
+    brief: '運用一個月內的碎片時間，把大工程拆成小任務，以 Nuxt 3 從零開始實作個人化履歷作品集網站，並加入SEO部署上線。',
     ownerRepo: 'supeihau/my-portfolio-2025',
     branch: 'main',
     pushAt: '',
@@ -45,6 +59,7 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 學期預排課表',
+    brief: '以彰師大選課學生為受眾，讓學生可以在預選期間將感興趣的課程加入課表中，方便安排課表，並查看通識、系上選課、衝堂和學分數的計算。',
     ownerRepo: 'ba2c7yoyo/NcueHuLoLo-v2025',
     branch: 'timetable-selina-0517-1',
     pushAt: '',
@@ -55,6 +70,7 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 評價審核與查詢',
+    'brief': '學生透過 Google 表單提交課程評價，經由管理員後台人工審查後，將評價同步至資料庫，實現 Line Bot 課程評價的即時查詢。',
     ownerRepo: 'ba2c7yoyo/NcueHuLoLo-v2025',
     branch: 'admin-pulish-selina-250215-1',
     pushAt: '',
@@ -65,6 +81,7 @@ const projects = ref([
   },
   {
     title: '科學毛怪 - 產品系統',
+    'brief': '主導 PetSci 高互動性的寵物健康報告系統開發，實作多層次數據視覺化頁面，並套用互動組件與動態視覺處理，將專業資訊轉化為美感與資訊深度的網頁。',
     ownerRepo:'ba2c7yoyo/PetSci-gogomaumau',
     branch: 'master',
     pushAt: '',
@@ -74,6 +91,7 @@ const projects = ref([
   },
   {
     title: '科學毛怪 - 產品官網',
+    'brief': '獨立負責 PetSci 官網前端開發，精準還原 UI 設計，建立專業且親和的寵物生技品牌門面。',
     ownerRepo: 'ba2c7yoyo/PetSci-Bussiness-Web',
     branch: 'main',
     pushAt: '',
@@ -83,10 +101,11 @@ const projects = ref([
   },
   {
     title: '彰師小生物 - 一頁式網頁',
+    brief: '獨立開發一頁式訂閱說明頁，實作響應式佈局並優化排版邏輯，確保在不同設備上皆具品牌呈現效果與資訊傳遞。',
     ownerRepo: 'supeihau/hulolo-landing-pages',
     branch: 'main',
     pushAt: '2024-06-01',
-    skills: ['FrontEnd', 'JavaScript'],
+    skills: ['FrontEnd', 'JavaScript', 'Bootstrap'],
     picture: 'images/project/hulolo-price.png',
     productUrl: 'https://ncuehulolo.idv.tw/subscribe/',
   },

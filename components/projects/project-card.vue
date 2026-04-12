@@ -6,7 +6,7 @@
         <v-row>
             <v-col 
                 cols="12" sm="6" md="6" lg="6" class="d-flex flex-column" 
-                :class="isDesktop ? 'order-sm-1 order-2' : 'order-2'"
+                :class="textColClass"
             >
                 <div class="d-flex flex-column align-start justify-start flex-grow-1">
                     <div class="text-brown mb-3"
@@ -17,11 +17,20 @@
                     <div class="text-brown text-h6-regular mb-5">
                         上次更新時間：{{ props.project.pushAt }}
                     </div>
-                    <div class="flex-grow-1">
+                    <div>
+                        <div class="text-brown"
+                            :class="isDesktop ? 'text-h5-regular': 'text-h6-regular'"
+                        >
+                            {{ props.project.brief }}
+                        </div>
+                    </div>
+
+                    <div class=" align-start justify-start mt-5"
+                        :class="isDesktop? 'd-flex row' : 'column'">
                         <div 
                             v-for="value in props.project.skills"
-                            class="text-brown"
-                            :class="isDesktop ? 'text-h4-medium': 'text-h6-medium'"
+                            class="text-main-orange mr-3"
+                            :class="isDesktop ? 'text-h5-medium': 'text-h6-regular'"
                         >
                             # {{ value }}
                         </div>
@@ -32,7 +41,7 @@
                     :class="isDesktop || isPad? 'flex-row ga-3': 'flex-column ga-3'"
                 >
                     <CustomButton
-                        v-if="props.project.designConceptUrl != ''"
+                        v-if="props.project.designConceptUrl"
                         :type="'outlined'"
                         :btnName="'設計理念'"
                         :class="'bg-white text-main-orange'"
@@ -41,7 +50,7 @@
                     />
 
                      <CustomButton
-                        v-if="props.project.productUrl != ''"
+                        v-if="props.project.productUrl"
                         :type="'elevated'"
                         :btnName="'產品網址'"
                         :class="'bg-main-orange text-white'"
@@ -52,7 +61,7 @@
             </v-col>
             <v-col 
                 cols="12" sm="6" md="6" lg="6" 
-                :class="isDesktop ? 'order-sm-2 order-1' : 'order-1'"
+                :class="imageColClass"
             >
                 <NuxtImg 
                     :src="props.project.picture" 
@@ -77,7 +86,21 @@ const props = defineProps({
     project: {
         type: Object,
         required: true
+        },
+        index: {
+                type: Number,
+                required: true
     }
+});
+
+const textColClass = computed(() => {
+    if (!isDesktop.value) return 'order-2';
+    return props.index % 2 === 0 ? 'order-sm-1 order-2' : 'order-sm-2 order-2';
+});
+
+const imageColClass = computed(() => {
+    if (!isDesktop.value) return 'order-1';
+    return props.index % 2 === 0 ? 'order-sm-2 order-1' : 'order-sm-1 order-1';
 });
 
 const openLink = (url) => {

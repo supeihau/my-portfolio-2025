@@ -11,7 +11,7 @@
         <span 
           role="button"
           tabindex="0"
-          class="text-white text-h5-medium pr-8"
+          class="text-white text-h5-medium pr-5"
           @click="scrollTo(item.targetId)"
         >
           {{ item.title }}
