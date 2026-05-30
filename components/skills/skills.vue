@@ -79,6 +79,7 @@
 
             <v-col cols="12" sm="12" md="12" lg="12" class="px-lg-8">
                 <div 
+                    data-aos="fade-up"
                     class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
                     :class="isDesktop ? 'px-7 py-10 custom-rounded-lg': 'px-2 py-4 custom-rounded-md'"   
                 >

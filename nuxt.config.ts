@@ -33,6 +33,7 @@ export default defineNuxtConfig({
   css: [
     'vuetify/styles',
     '@mdi/font/css/materialdesignicons.css', // MDI 圖示
+    'aos/dist/aos.css',
     '@/assets/scss/app.scss',
   ],
   build: {
