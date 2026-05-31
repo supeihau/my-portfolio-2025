@@ -25,8 +25,8 @@
         </v-row>
 
         <div
-          class="text-brown text-center text-decoration-underline cursor-pointer"
-          :class="isDesktop ? 'text-h4-medium mt-15' : 'text-h5-medium mt-6'"
+          class="text-brown text-center text-decoration-underline cursor-pointer mt-15"
+          :class="isDesktop ? 'text-h4-medium' : 'text-h5-medium mt-6'"
           @click="toggleExpand"
         >
           {{ expand ? 'View Less' : 'View More' }}

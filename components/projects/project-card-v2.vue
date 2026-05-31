@@ -18,7 +18,7 @@
           <NuxtImg
             :src="props.project.picture"
             alt="project-pic"
-            class="w-100 custom-rounded-md h-100 object-cover"
+            class="w-100 custom-rounded-md h-100 object-fit"
             loading="lazy"
             format="webp"
           />

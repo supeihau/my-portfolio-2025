@@ -1,5 +1,5 @@
 <template>
-    <section id="skills">
+    <section id="skills" class="custom-bg custom-margin">
         <v-row class="custom-px-lg px-md-12 px-5 custom-top-effect" align="stretch">
             <v-col cols="12" sm="6" md="6" lg="6" class="pl-lg-8">
                 <div
@@ -77,7 +77,7 @@
                 </div>
             </v-col>
 
-            <v-col cols="12" sm="12" md="12" lg="12" class="px-lg-8">
+            <v-col cols="12" sm="12" md="12" lg="12" class="px-lg-8 pb-15">
                 <div 
                     data-aos="fade-up"
                     class="d-flex flex-column align-center justify-start bg-light-orange fill-height" 
@@ -182,11 +182,11 @@ const hardskills = ref([
     width: 100%;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: auto 20%;
+    background-size: auto 30%;
 }
 
 .custom-top-effect {
-    top: -60px; 
+    top: -10px; 
     position: relative;
 }
 </style>
