@@ -119,7 +119,7 @@ const projects = ref([
     ownerRepo: 'supeihau/hulolo-landing-pages',
     branch: 'main',
     pushAt: '2024-06-01',
-    skills: ['FrontEnd', 'JavaScript', 'Bootstrap'],
+    skills: ['FrontEnd', 'JavaScript'],
     picture: 'images/project/hulolo-price.png',
     keyPoint:['前端刻板與跨裝置設計', '品牌視覺呈現與資訊傳遞優化'],
     productUrl: 'https://ncuehulolo.idv.tw/subscribe/',

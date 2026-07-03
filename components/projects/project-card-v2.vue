@@ -18,7 +18,7 @@
           <NuxtImg
             :src="props.project.picture"
             alt="project-pic"
-            class="w-100 custom-rounded-md h-100 object-fit"
+            class="w-100 custom-rounded-md object-fit"
             loading="lazy"
             format="webp"
           />
@@ -32,7 +32,7 @@
             上次更新時間：{{ props.project.pushAt }}
           </div>
 
-          <div class="d-flex row align-start justify-start mt-5">
+          <div class="d-flex row align-start justify-start mt-5 h-100">
             <div
               v-for="value in props.project.skills"
               :key="value"
@@ -43,6 +43,7 @@
             </div>
           </div>
           <div
+            v-if="!state.switch"
             class="w-100 d-flex align-end justify-end cursor-pointer"
             :class="isDesktop ? 'custom-position-desktop' : 'custom-position-phone'"
             @click="state.switch = true"
