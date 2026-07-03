@@ -95,7 +95,7 @@
             </ul>
           </div>
 
-          <div class="d-flex mt-5 flex-row ga-3">
+          <div class="d-flex mt-5 flex-row flex-wrap ga-3">
             <CustomButton
               v-if="props.project.designConceptUrl"
               :type="'outlined'"
@@ -160,31 +160,43 @@ const switchCards = () => {};
 <style lang="scss" scoped>
 .project-flip {
   perspective: 1200px;
+  -webkit-perspective: 1200px;
 }
 
 .project-flip__inner {
-  position: relative;
+  display: grid;
+  grid-template-areas: "card";
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform 0.4s ease;
 }
 
 .project-flip__inner.is-flipped {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .project-flip__face {
+  grid-area: card;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
 .project-flip__front {
-  position: relative;
+  pointer-events: auto;
 }
 
 .project-flip__back {
-  position: absolute;
-  inset: 0;
   transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.project-flip__inner.is-flipped .project-flip__front {
+  pointer-events: none;
+}
+
+.project-flip__inner.is-flipped .project-flip__back {
+  pointer-events: auto;
 }
 
 .custom-plus-desktop {
